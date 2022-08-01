@@ -13,11 +13,9 @@ export const TimerToggleButton: React.FC<Props> = ({
   startCountDownHandler,
   stopCountDownHandler,
   isTimerRunning,
-  setIsTimerRunning,
 }) => {
   const toggleTimer = () => {
     isTimerRunning ? stopCountDownHandler() : startCountDownHandler();
-    setIsTimerRunning(!isTimerRunning);
   };
 
   return (
@@ -27,7 +25,7 @@ export const TimerToggleButton: React.FC<Props> = ({
     >
       <View style={styles.container}>
         <FontAwesome
-          style={{ alignSelf: "center" }}
+          style={styles.icon}
           name={isTimerRunning ? "pause" : "play"}
           size={125}
           color="#fff"
@@ -47,4 +45,5 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
     marginVertical: 50,
   },
+  icon: { alignSelf: "center" },
 });
